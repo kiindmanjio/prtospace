@@ -1,24 +1,43 @@
-# README
+# protospace
+A web app that anyone could share their ideas of a prototype they are plannig to develop. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#####Users
+  -nickname :string
+  -profile  :string
+  -image    :string
+  -work     :string
+  -group    :string
+######Association
+  -user has_many prototypes, comments likes
 
-Things you may want to cover:
+#####Prototypes
+  -name     :string
+  -user_id  :string
+  -cathchcopy :string
+  -concept  :text
+  -like_count :integer
+  -image :text
+######Association
+  -prototypes belongs_to user,
+  -prototypes has_many comments, likes, images
 
-* Ruby version
+#####Comments
+  -text     :text
+  -user_id  :integer
+  -prototype_id  :integer
+######Association
+  -comment belongs_to user, prototype
 
-* System dependencies
+#####Likes
+  -user_id :integer
+  -prottype_id :integer
+######Association
+  -Like belongs_to :user, prototype
 
-* Configuration
+#####Image
+  -image :string
+  -prototype_id
+  -status
+######Association
+  -Image belongs_to prototype
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
