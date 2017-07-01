@@ -3,6 +3,7 @@ A web app that anyone could share their ideas of a prototype they are plannig to
 
 #####Users
   -nickname :string
+  -email    :string
   -profile  :string
   -image    :string
   -work     :string
@@ -13,16 +14,15 @@ A web app that anyone could share their ideas of a prototype they are plannig to
 #####Prototypes
   -name     :string
   -user_id  :string
-  -cathchcopy :string
+  -catchchcopy :string
   -concept  :text
-  -like_count :integer
-  -image :text
+  -likes_count :integer
 ######Association
   -prototypes belongs_to user,
   -prototypes has_many comments, likes, images
 
 #####Comments
-  -text     :text
+  -content     :text
   -user_id  :integer
   -prototype_id  :integer
 ######Association
@@ -30,12 +30,12 @@ A web app that anyone could share their ideas of a prototype they are plannig to
 
 #####Likes
   -user_id :integer
-  -prottype_id :integer
+  -protoype_id :integer
 ######Association
   -Like belongs_to :user, prototype
 
-#####Image
-  -image :string
+#####Images
+  -content :string
   -prototype_id
   -status
 ######Association
